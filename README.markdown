@@ -7,8 +7,8 @@ Install Silver searcher.
 
 `mkdir ~/.dotfiles && cd ~/.dotfiles`
 
-`git clone git@github.com:npras/dotvim.git`
+`git clone git@github.com:npras/dotorigvim.git`
 
-`cd dotvim`
+`cd dotorigvim`
 
 `rake setup`
