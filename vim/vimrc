@@ -1,1 +1,153 @@
-" some comment
+" screw vi
+set nocompatible
+
+" tabs
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+set encoding=utf-8
+
+set scrolloff=3
+
+" Store temporary files in a central spot
+" The double slash at the end ensures that the filename is created with the entire path so that name collision doesn't happen
+set backupdir=~/.vim-tmp/bckp//,/tmp//
+set directory=~/.vim-tmp/swap//,/tmp//
+
+set autoindent
+set autoread
+set showmode
+set showcmd
+set hidden
+set history=10000
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+
+" relative line numbers. Bloody awesome!
+set relativenumber
+
+set undodir=~/.vim-tmp/undo//,/tmp//
+" undo-ing even after saving
+set undofile
+
+" tab completion
+set wildmenu
+set wildmode=list:longest,full
+set ignorecase
+set smartcase
+" ---instead of :%s/foo/bar/g use :%s/foo/bar/---
+set gdefault	
+set incsearch
+set showmatch
+set hlsearch
+
+" 80th column is colored to show you are going too long
+set colorcolumn=80
+
+" make the current window big, but leave others small
+set winwidth=84
+" We have to have a winheight bigger than we want to set winminheight. But if we set winheight to be huge before winminheight, the winminheight set will fail.
+set winheight=5
+set winminheight=5
+set winheight=999
+
+" colorscheme
+set background=dark
+colorscheme molokai
+
+" Adding 6 more years to your life
+nnoremap ; :
+nnoremap : ;
+
+" mapping CAPS for moving around splits instead of <C-w> ---
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" first 2 lines fixes Vim's screwed up regex search behaviour it seems
+nnoremap / /\v
+vnoremap / /\v
+
+" What's this?! https://www.reddit.com/r/vim/comments/1vdrxg/space_is_a_big_key_what_do_you_map_it_to/
+nmap <Space> \
+nmap <Space><Space> \\
+
+" Edit files in same directory as current file
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+nnoremap <leader>e :edit <C-R>=expand('%:h').'/'<cr>
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cnoremap w!! w !sudo tee > /dev/null %
+
+" place the next search in the middle of the screen
+nnoremap N Nzz
+nnoremap n nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+nnoremap <silent> g# g#zz
+
+" clear the search buffer when hitting return
+nnoremap <cr> :noh<cr>
+
+" To save, 'ctrl+s' and the new favorite 'ctrl+space'
+nmap <C-s> ;w<CR><CR>
+" saving and then go to normal mode. This way it is easier to quit
+imap <C-s> <Esc>;w<CR><CR>
+"
+nmap <C-Space> ;w<CR><CR>
+imap <C-Space> <Esc>;w<CR><CR>
+
+" <leader>v -> :vs. Creates vertical split of the current buffer
+nnoremap <leader>v :vs<cr>
+" <leader>h -> :sp. Creates horizontal split of the current buffer
+nnoremap <leader>h :sp<cr>
+
+" <leader><leader> -> Switch between last two files
+nnoremap <leader><leader> <c-^>
+
+" <leader>w -> show directory listing
+nnoremap <leader>w :e.<cr>
+
+" <leader>x -> maximize current window
+nnoremap <leader>x <C-W>_<C-W><Bar>
+
+" <leader>l -> select all
+nnoremap <leader>l ggVG
+
+
+" ,c or Ctrl-c -> Copy selected text to system clipboard
+vnoremap ,c "+y
+vnoremap <C-c> "+y
+" ,p -> Pasted from system clipboard
+nnoremap ,p "+gP
+" or use <C-r><C-p>+ to paste from clipboard in INSERT mode
+" <leader>v -> reselect the text that was just pasted so I can perform commands (like indentation) on it
+nnoremap <leader>V `[v`]
+
+" <leader>t -> New Tab!
+nnoremap <leader>t :tabnew<cr>
+
+" <leader>B -> delete all but the open buffer
+nnoremap <leader>B :e.<cr>:BufOnly<cr>
+" <leader>d -> equivalent to :bd. Better than :q
+nnoremap <leader>d :bd<cr>
+nnoremap <leader>q :q<CR>
+
+
+"" Custom Macros
+
+" Tenderlove's Debug syntax
+" ---<leader>D -> in normal mode puts these lines below cursor:
+" puts "#" * 90 #DEBUG
+" p caller #DEBUG
+" puts "#" * 90 #DEBUG
+nnoremap <leader>D oputs "^^ #{?# * 90}" #DEBUG<c-m>p caller.join("\n") #DEBUG<c-m>puts "$$ #{?# * 90}" #DEBUG<esc>:w<CR>
