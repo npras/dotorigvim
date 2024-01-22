@@ -1,6 +1,6 @@
 ## Dependencies
 
-Install Silver searcher.
+Install Silver searcher from https://github.com/ggreer/the_silver_searcher
 
 
 ## Setup

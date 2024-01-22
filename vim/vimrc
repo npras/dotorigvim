@@ -161,6 +161,11 @@ let g:ctrlp_custom_ignore = {
  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
  \ }
 
+" <leader>a -> Ack Or SilverSearch or whatever
+let g:ackprg = 'ag --nogroup --nocolor --column'
+nnoremap <leader>a :Ack!<space>
+nnoremap <leader>A :Ack!<space>-S<space>
+
 
 "" Custom Macros
 
@@ -223,6 +228,9 @@ Plug 'tpope/vim-vinegar'
 Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-sneak'
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
