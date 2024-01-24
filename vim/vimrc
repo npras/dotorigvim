@@ -231,6 +231,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'mattn/emmet-vim'
 Plug 'justinmk/vim-sneak'
 Plug 'romainl/vim-cool'
+Plug 'vim-ruby/vim-ruby'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
