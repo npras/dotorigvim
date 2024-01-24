@@ -30,6 +30,9 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 
+" Diffs are shown side-by-side not above/below
+set diffopt=vertical
+
 " relative line numbers. Bloody awesome!
 set relativenumber
 
@@ -81,8 +84,8 @@ nmap <Space> \
 nmap <Space><Space> \\
 
 " Edit files in same directory as current file
-" cnoremap %% <C-R>=expand('%:h').'/'<cr>
-" nnoremap <leader>e :edit <C-R>=expand('%:h').'/'<cr>
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+nnoremap <leader>e :edit <C-R>=expand('%:h').'/'<cr>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cnoremap w!! w !sudo tee > /dev/null %
@@ -226,8 +229,8 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-vinegar'
 
 Plug 'mattn/emmet-vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'justinmk/vim-sneak'
+Plug 'romainl/vim-cool'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
