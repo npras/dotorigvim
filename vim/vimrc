@@ -233,7 +233,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'romainl/vim-cool'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-airline/vim-airline'
-Plug 'easymotion/vim-easymotion'
+"Plug 'easymotion/vim-easymotion'
 Plug 'vimwiki/vimwiki'
 
 Plug 'ctrlpvim/ctrlp.vim'
