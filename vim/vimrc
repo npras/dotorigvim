@@ -232,6 +232,7 @@ Plug 'mattn/emmet-vim'
 Plug 'justinmk/vim-sneak'
 Plug 'romainl/vim-cool'
 Plug 'vim-ruby/vim-ruby'
+Plug 'vim-airline/vim-airline'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
