@@ -29,12 +29,10 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
+set number
 
 " Diffs are shown side-by-side not above/below
 set diffopt=vertical
-
-" relative line numbers. Bloody awesome!
-set relativenumber
 
 set undodir=~/.vim-tmp/undo//,/tmp//
 " undo-ing even after saving
