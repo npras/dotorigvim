@@ -1,6 +1,9 @@
 " screw vi
 set nocompatible
 
+filetype plugin on
+syntax on
+
 " tabs
 set tabstop=2
 set shiftwidth=2
@@ -178,6 +181,8 @@ nnoremap <leader>A :Ack!<space>-S<space>
 nnoremap <leader>D oputs "^^ #{?# * 90}" #DEBUG<c-m>p caller.join("\n") #DEBUG<c-m>puts "$$ #{?# * 90}" #DEBUG<esc>:w<CR>
 
 
+"==============================================================================
+
 " vim-plug for plugins
 call plug#begin()
 " The default plugin directory will be as follows:
@@ -233,7 +238,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/BufOnly.vim'
 "Plug 'vim-airline/vim-airline'
 "Plug 'easymotion/vim-easymotion'
-"Plug 'vimwiki/vimwiki'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
@@ -244,3 +248,4 @@ call plug#end()
 " You can revert the settings after the call like so:
 "   filetype indent off   " Disable file-type-specific indentation
 "   syntax off            " Disable syntax highlighting
+"==============================================================================
